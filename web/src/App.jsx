@@ -257,10 +257,6 @@ export default function App() {
           </div>
         </section>
       </main>
-
-      <a className="wa-chip" href={wa("Olá, Jaqueline!")} aria-label="Abrir conversa no WhatsApp">
-        WhatsApp
-      </a>
     </>
   );
 }

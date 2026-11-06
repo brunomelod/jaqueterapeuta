@@ -454,7 +454,9 @@ summary:focus-visible {
     flex: 0 0 auto;
     height: auto;
     min-height: 0;
-    max-height: min(82dvh, 36rem);
+    /* Sem teto em dvh: o motor usa overflow:hidden no .fx-palco e cortava foto + texto */
+    max-height: none;
+    overflow: visible;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
@@ -491,18 +493,23 @@ summary:focus-visible {
     position: relative;
     order: 2;
     width: 100%;
-    max-width: 20rem;
+    /* Mesma lógica do desktop: caixa com altura máxima; imagem inteira com contain + base */
+    max-width: min(24rem, 100%);
     margin-inline: auto;
-    height: auto;
+    height: min(72dvh, 40rem);
     min-height: 0;
     display: flex;
     align-items: flex-end;
     justify-content: center;
   }
   .hero-foto img {
-    height: min(48dvh, 22rem);
+    display: block;
+    height: 100%;
     width: auto;
     max-width: 100%;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center bottom;
     transform-origin: center bottom;
   }
   .btn-linha {
@@ -1116,36 +1123,7 @@ summary:focus-visible {
   margin: 0;
 }
 
-/* ---------- WhatsApp ---------- */
-
-.wa-chip {
-  position: fixed;
-  right: max(var(--gutter), env(safe-area-inset-right, 0px));
-  bottom: max(1rem, env(safe-area-inset-bottom, 0px));
-  z-index: 40;
-  padding: 0.75rem 1.1rem;
-  min-height: 2.75rem;
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  max-width: calc(100% - 2 * var(--gutter));
-  background: var(--acento);
-  color: var(--creme);
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: background 0.25s var(--ease);
-}
-.wa-chip:hover {
-  background: var(--acento-vivo);
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .wa-chip,
   .btn,
   .btn-linha {
     transition: none;
