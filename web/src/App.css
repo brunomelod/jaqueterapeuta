@@ -446,8 +446,9 @@ summary:focus-visible {
 
 @media (max-width: 799px) {
   #sala {
-    /* Menos “trâmite” vazio em telefone; palco um pouco mais alto */
-    height: min(142dvh, 155vh);
+    /* O motor define height inline (data-fx-altura × 100vh); isso ficava menor que foto+texto e #peso encavalava */
+    height: auto !important;
+    min-height: min(142dvh, 155vh);
   }
   #sala .fx-palco.sala-palco,
   .sala-palco {
