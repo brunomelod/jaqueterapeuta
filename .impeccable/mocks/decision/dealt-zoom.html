@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>A chamada é o osciloscópio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    html, body { width: 1440px; height: 900px; overflow: hidden; background: #FBFBF7; color: #2E4030; font-family: Sora, sans-serif; }
+    nav { display: flex; justify-content: space-between; padding: 20px 48px; font-size: 15px; }
+    nav b { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 22px; }
+    nav a { color: inherit; font-weight: 600; text-decoration: none; }
+    .call { width: 1240px; height: 760px; margin: 0 auto; border: 2px solid #C9DCC6; border-radius: 16px; overflow: hidden; display: grid; grid-template-rows: 44px 1fr 120px; background: #EEF4EA; }
+    .bar { display: flex; align-items: center; gap: 10px; padding: 0 16px; background: #C9DCC6; font-size: 13px; }
+    .dots span { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #7A9A78; margin-right: 4px; }
+    .stage { display: grid; grid-template-columns: 1.4fr 0.9fr; }
+    .video { background: #F8F3DC; }
+    .side { padding: 36px 32px; display: flex; flex-direction: column; justify-content: center; background: #FBFBF7; }
+    h1 { font-family: "Cormorant Garamond", serif; font-size: 52px; font-weight: 500; line-height: 1.05; max-width: 10ch; }
+    h1 em { font-style: italic; font-weight: 400; }
+    p { margin: 14px 0 24px; font-size: 16px; color: #5A6B5C; }
+    .cta { display: inline-block; background: #3E5A40; color: #FBFBF7; padding: 14px 22px; border-radius: 10px; font-weight: 500; text-decoration: none; font-size: 15px; }
+    .scope { background: #2E4030; color: #C9DCC6; padding: 16px 28px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+    svg { width: 100%; height: 64px; }
+    .ch { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .next { width: 1240px; margin: 8px auto 0; height: 36px; border: 2px solid #F3E9B4; border-bottom: 0; border-radius: 12px 12px 0 0; background: #F8F3DC; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; display: flex; align-items: center; padding: 0 16px; }
+  </style>
+</head>
+<body>
+  <nav><b>Jaqueline Secundino</b><a href="#">WhatsApp</a></nav>
+  <section class="call">
+    <div class="bar"><span class="dots"><span></span><span></span><span></span></span> Sessão · Jaqueline Secundino · ao vivo</div>
+    <div class="stage">
+      <div class="video" aria-label="Jaqueline Secundino"></div>
+      <div class="side">
+        <h1>A sessão já está <em>aberta.</em></h1>
+        <p>Terapeuta emocional · sessões pelo Zoom</p>
+        <a class="cta" href="#">Entrar pelo WhatsApp</a>
+      </div>
+    </div>
+    <div class="scope">
+      <svg viewBox="0 0 800 64" fill="none" aria-hidden="true">
+        <path d="M0 40 Q40 40 80 28 T160 40 T240 22 T320 40 T400 30 T480 40 T560 18 T640 40 T720 36 T800 40" stroke="#C9DCC6" stroke-width="2" />
+      </svg>
+      <div class="ch">Canal presença · estável</div>
+    </div>
+  </section>
+  <div class="next">Canal 2 · Peso</div>
+</body>
+</html>

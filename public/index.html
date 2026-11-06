@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jaqueline Secundino, terapeuta emocional com TRG. Escuta ativa, espaço seguro. Primeiro contato pelo WhatsApp.">
+  <title>Jaqueline Secundino · Terapeuta emocional · TRG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="motor/sites-incriveis.css">
+  <style>
+    :root {
+      /* Papel com puxada verde-acinzentada (brief girassol / jardim), não creme “neutro” */
+      --papel: #edf1e8;
+      --papel-2: #e4ebe0;
+      --oliva: #2d3d2a;
+      --oliva-suave: #4a5c46;
+      --sol: #c4a035;
+      --sol-frio: #a68b2a;
+      --tinta: #121210;
+      --tinta-muta: #3d3d38;
+      --bruma: rgba(18, 18, 16, 0.06);
+      --whatsapp: #128c7e;
+      --font-serif: "Newsreader", "Times New Roman", serif;
+      --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+      --step--1: clamp(0.875rem, 0.82rem + 0.2vw, 0.9375rem);
+      --step-0: clamp(1rem, 0.94rem + 0.25vw, 1.0625rem);
+      --step-1: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+      --step-3: clamp(1.75rem, 1.35rem + 1.4vw, 2.35rem);
+      --step-5: clamp(2.75rem, 1.9rem + 3.2vw, 4.25rem);
+      --space-1: 0.5rem;
+      --space-2: 1rem;
+      --space-3: 1.5rem;
+      --space-4: 2.5rem;
+      --space-5: 4rem;
+      --space-6: 6.5rem;
+      --ring: 0 0 0 2px var(--papel), 0 0 0 4px var(--oliva);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--papel);
+      color: var(--tinta);
+      font-family: var(--font-sans);
+      font-size: var(--step-0);
+      line-height: 1.62;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection {
+      background: color-mix(in srgb, var(--sol) 35%, transparent);
+      color: var(--tinta);
+    }
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      z-index: 100;
+      padding: 0.75rem 1rem;
+      background: var(--oliva);
+      color: #fff;
+      font-weight: 500;
+    }
+    .skip:focus-visible { left: var(--space-2); top: var(--space-2); outline: none; box-shadow: var(--ring); }
+
+    h1, h2 {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--tinta);
+      margin: 0;
+    }
+    h1 { font-size: var(--step-5); font-weight: 500; }
+    h2 { font-size: var(--step-3); font-weight: 500; }
+    h3 {
+      font-family: var(--font-sans);
+      font-size: var(--step--1);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--oliva);
+      margin: 0 0 var(--space-2);
+    }
+    p { margin: 0 0 var(--space-3); max-width: 62ch; color: var(--tinta-muta); }
+    .suave { color: var(--tinta-muta); }
+    .shell {
+      width: 100%;
+      max-width: 1180px;
+      margin-inline: auto;
+    }
+
+    /* Topo editorial */
+    .masthead {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: var(--space-2) 0;
+      background: var(--papel);
+      border-bottom: 1px solid var(--bruma);
+    }
+    .masthead__inner {
+      width: min(1180px, 100%);
+      margin-inline: auto;
+      padding-inline: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+    }
+    .masthead__name {
+      font-family: var(--font-serif);
+      font-size: var(--step-1);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--tinta);
+      text-decoration: none;
+    }
+    .masthead__name:hover { color: var(--oliva-suave); }
+    .masthead__nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(0.75rem, 2vw, 1.5rem);
+      font-size: var(--step--1);
+      font-weight: 500;
+    }
+    .masthead__nav a {
+      color: var(--tinta-muta);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 0.1em;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .masthead__nav a:hover { color: var(--tinta); border-bottom-color: var(--sol); }
+    .masthead__wa {
+      color: var(--oliva);
+      font-weight: 600;
+    }
+    .masthead__wa:hover { border-bottom-color: var(--whatsapp); color: var(--whatsapp); }
+
+    /* Botões: um primário sólido + link textual (menos “botão de template”) */
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.65rem;
+      background: var(--whatsapp);
+      color: #fff !important;
+      font-family: var(--font-sans);
+      font-size: var(--step--1);
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: filter 0.2s ease, transform 0.2s ease;
+    }
+    .btn-wa:hover { filter: brightness(1.05); transform: translateY(-1px); }
+    .btn-wa:focus-visible { outline: none; box-shadow: var(--ring); }
+    .link-text {
+      font-size: var(--step--1);
+      font-weight: 500;
+      color: var(--oliva);
+      text-decoration: none;
+      border-bottom: 1px solid color-mix(in srgb, var(--oliva) 45%, transparent);
+      padding-bottom: 0.12em;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .link-text:hover { color: var(--tinta); border-bottom-color: var(--sol); }
+    .link-text:focus-visible { outline: none; box-shadow: var(--ring); }
+
+    /* Hero */
+    #hero-cena { padding: 0; }
+    #hero-cena .fx-palco.hero-palco {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: stretch;
+      padding: clamp(5.5rem, 12vh, 7rem) 32px clamp(2rem, 5vw, 3rem);
+      overflow: hidden;
+    }
+    .hero-palco::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 90% 70% at 70% 20%, color-mix(in srgb, #fef9e8 70%, transparent) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 10% 90%, color-mix(in srgb, var(--papel-2) 90%, transparent) 0%, transparent 50%),
+        linear-gradient(
+          calc(88deg + var(--girassol, 0) * 28deg),
+          var(--papel) 0%,
+          color-mix(in srgb, var(--papel-2) 92%, var(--papel)) 45%,
+          var(--papel) 100%
+        );
+    }
+    .hero-palco::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 35%;
+      z-index: 0;
+      background: linear-gradient(to top, color-mix(in srgb, var(--papel) 98%, transparent), transparent);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1180px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      align-items: end;
+    }
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        gap: var(--space-4);
+        align-items: end;
+      }
+    }
+    .hero-copy { padding-bottom: var(--space-2); }
+    .hero-role {
+      font-family: var(--font-sans);
+      font-size: var(--step-1);
+      font-weight: 500;
+      line-height: 1.45;
+      color: var(--tinta-muta);
+      max-width: 36ch;
+      margin: 0 0 var(--space-3);
+    }
+    .hero-statement {
+      font-family: var(--font-serif);
+      font-size: clamp(1.35rem, 2.4vw, 1.65rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      color: var(--oliva);
+      max-width: 28ch;
+      margin: 0 0 var(--space-3);
+    }
+    .hero-lead {
+      font-size: var(--step-1);
+      line-height: 1.55;
+      max-width: 38ch;
+      color: var(--tinta-muta);
+      margin: 0 0 var(--space-3);
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-3);
+      margin-top: var(--space-4);
+    }
+    /* Foto com canal alfa: sem caixa, sem recorte tipo “retrato em moldura” */
+    .hero-figure {
+      margin: 0;
+      justify-self: center;
+      position: relative;
+      max-width: min(100%, 520px);
+      align-self: end;
+    }
+    @media (min-width: 900px) {
+      .hero-figure {
+        justify-self: end;
+        max-width: min(48vw, 480px);
+      }
+    }
+    .hero-figure img {
+      width: 100%;
+      height: auto;
+      max-height: min(72vh, 640px);
+      display: block;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    /* Blocos de seção */
+    .sec {
+      padding: var(--space-6) 32px;
+      box-sizing: border-box;
+    }
+    @media (min-width: 900px) {
+      .sec,
+      .fim,
+      .pico-wrap {
+        padding-left: 48px;
+        padding-right: 48px;
+      }
+      .masthead__inner { padding-inline: 48px; }
+      #hero-cena .fx-palco.hero-palco {
+        padding-left: 48px;
+        padding-right: 48px;
+      }
+    }
+    .sec--quiet { background: var(--papel-2); }
+    .sec__head {
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--bruma);
+    }
+    .sec__head h2 { max-width: 18ch; }
+    .sec__head p { margin-bottom: 0; margin-top: var(--space-2); max-width: 48ch; }
+
+    /* Manifesto: largura editorial */
+    .manifesto .shell { max-width: 720px; }
+    .manifesto__body {
+      font-family: var(--font-serif);
+      font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+      line-height: 1.45;
+      color: var(--tinta);
+      letter-spacing: -0.02em;
+    }
+    .manifesto__body p { color: var(--tinta); max-width: none; }
+    .manifesto .btn-wa { margin-top: var(--space-3); }
+
+    /* Lista de princípios (não é grid 2x2 de cards) */
+    .principles { padding-top: 0; }
+    .principles__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--bruma);
+    }
+    .principles__list li {
+      display: grid;
+      gap: var(--space-2);
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid var(--bruma);
+    }
+    @media (min-width: 720px) {
+      .principles__list li {
+        grid-template-columns: 160px 1fr;
+        gap: var(--space-4);
+        align-items: start;
+      }
+    }
+    .principles__tag {
+      font-size: var(--step--1);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--sol-frio);
+    }
+    .principles__text h3 { margin-bottom: var(--space-1); color: var(--tinta); }
+    .principles__text p { margin: 0; max-width: 52ch; }
+
+    /* Trilho pico: faixas tipográficas */
+    .pico-wrap {
+      padding-inline: 32px;
+      box-sizing: border-box;
+    }
+    .pico-wrap .fx-palco {
+      justify-content: flex-start;
+      align-items: center;
+      padding: var(--space-5) 0;
+    }
+    .pico-inner {
+      width: min(1180px, 100%);
+      margin-inline: auto;
+      padding-block: var(--space-5);
+    }
+    .pico-inner > p.suave { margin-bottom: var(--space-4); max-width: 42ch; }
+    .cartao-depo {
+      flex: 0 0 min(78vw, 320px);
+      max-width: 320px;
+      background: var(--oliva);
+      color: #f2f0eb;
+      padding: var(--space-4) var(--space-3);
+      border: none;
+      box-shadow: none;
+    }
+    .cartao-depo .tema-cartao {
+      font-size: var(--step--1);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: color-mix(in srgb, #f2f0eb 55%, var(--sol));
+      margin-bottom: var(--space-2);
+    }
+    .cartao-depo .cartao-texto {
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+      line-height: 1.35;
+      font-weight: 400;
+      color: #f7f5f0;
+    }
+
+    /* TRG split */
+    .split-trg .shell {
+      display: grid;
+      gap: var(--space-4);
+    }
+    @media (min-width: 800px) {
+      .split-trg .shell {
+        grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+        gap: var(--space-5);
+        align-items: start;
+      }
+    }
+    .split-trg__aside {
+      font-family: var(--font-serif);
+      font-size: clamp(4rem, 8vw, 6rem);
+      line-height: 0.85;
+      color: color-mix(in srgb, var(--sol) 65%, var(--oliva));
+      font-weight: 500;
+      letter-spacing: -0.04em;
+    }
+    .split-trg__body p { margin-bottom: var(--space-3); }
+    .split-trg .btn-wa { margin-top: var(--space-2); }
+
+    /* FAQ minimal */
+    .faq-block h2 { text-align: left; margin-bottom: var(--space-2); }
+    .faq-block .shell > .suave { margin-bottom: var(--space-4); max-width: 48ch; }
+    .faq-list {
+      max-width: 720px;
+      margin-top: var(--space-2);
+      padding-top: var(--space-2);
+      border-top: 1px solid var(--bruma);
+    }
+    details.faq-item {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid var(--bruma);
+      padding: 0;
+      margin: 0;
+      max-width: none;
+    }
+    details.faq-item summary {
+      cursor: pointer;
+      font-family: var(--font-serif);
+      font-size: var(--step-1);
+      font-weight: 500;
+      padding: var(--space-3) 0;
+      list-style: none;
+      color: var(--tinta);
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item[open] summary { border: none; padding-bottom: var(--space-1); }
+    details.faq-item .faq-body {
+      padding: 0 0 var(--space-3);
+      color: var(--tinta-muta);
+    }
+    details.faq-item .faq-body p {
+      margin: 0;
+      font-size: var(--step--1);
+      line-height: 1.65;
+    }
+
+    /* Rodapé */
+    .fim {
+      padding: var(--space-6) 32px;
+      box-sizing: border-box;
+      background: var(--tinta);
+      color: #e8e6e1;
+    }
+    .fim .shell {
+      display: grid;
+      gap: var(--space-4);
+      text-align: left;
+    }
+    @media (min-width: 700px) {
+      .fim .shell {
+        grid-template-columns: 1fr auto;
+        align-items: end;
+      }
+    }
+    .fim h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: #f7f5f0;
+      font-weight: 500;
+    }
+    .fim .suave {
+      color: color-mix(in srgb, #e8e6e1 70%, var(--sol));
+      margin-bottom: var(--space-2);
+      font-size: var(--step--1);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .fim p { color: color-mix(in srgb, #e8e6e1 88%, transparent); max-width: 32ch; margin-bottom: 0; }
+    .fim .btn-wa {
+      justify-self: start;
+    }
+    @media (min-width: 700px) {
+      .fim .btn-wa { justify-self: end; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <a class="masthead__name" href="#">Jaqueline Secundino</a>
+      <nav class="masthead__nav" aria-label="Primário">
+        <a href="#trg">TRG</a>
+        <a href="#faq">Dúvidas</a>
+        <a class="masthead__wa" href="https://wa.me/5571992153282?text=Ol%C3%A1%2C%20Jaqueline%21">71 99215-3282</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero-cena" data-fx-fixa data-fx-altura="4" data-fx-fundo="#edf1e8" data-fx-tinta="#121210" aria-labelledby="hero-titulo">
+    <div class="fx-palco hero-palco" id="hero-palco">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-titulo" data-fx="palavras">Jaqueline Secundino</h1>
+          <p class="hero-role" data-fx="subir" data-fx-atraso="80">Terapeuta emocional · Terapia de Reprocessamento Generativo (TRG)</p>
+          <p class="hero-statement" data-fx="subir" data-fx-atraso="120">Menos peso. Mais presença.</p>
+          <p class="hero-lead suave" data-fx="subir" data-fx-atraso="180">
+            Espaço de escuta clínica para organizar o emocional com acolhimento, sem julgamento.
+          </p>
+          <div class="hero-cta">
+            <a class="btn-wa" data-fx="crescer" data-fx-atraso="240" href="https://wa.me/5571992153282?text=Ol%C3%A1%2C%20Jaqueline%21%20Quero%20conversar%20sobre%20terapia.">WhatsApp</a>
+            <a class="link-text" data-fx="surgir" data-fx-atraso="320" href="#principios">Como funciona</a>
+          </div>
+        </div>
+        <figure class="hero-figure" data-fx="direita" data-fx-atraso="180">
+          <img src="assets/jaqueline-hero.png" width="640" height="800" alt="Jaqueline Secundino, terapeuta emocional, retrato em fundo transparente.">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <main id="conteudo">
+    <section class="sec sec--quiet manifesto" data-fx-fundo="#e4ebe0" data-fx-tinta="#121210">
+      <div class="shell">
+        <div class="manifesto__body" data-fx="subir">
+          <p>Ansiedade e sobrecarga não são falta de força. São sinais de que algo precisa de nome e de espaço. A terapia não promete milagre: oferece método, confidencialidade e uma relação onde você não precisa se editar antes de falar.</p>
+        </div>
+        <a class="btn-wa" data-fx="surgir" data-fx-atraso="120" href="https://wa.me/5571992153282?text=Ol%C3%A1%2C%20Jaqueline%21%20Gostaria%20de%20marcar%20um%20primeiro%20contato.">Agendar conversa · 71 99215-3282</a>
+      </div>
+    </section>
+
+    <section id="principios" class="sec principles" data-fx-fundo="#edf1e8" data-fx-tinta="#121210" aria-labelledby="dif-titulo">
+      <div class="shell">
+        <div class="sec__head">
+          <h2 id="dif-titulo" data-fx="esquerda">Práticas que sustentam o processo</h2>
+          <p class="suave" data-fx="surgir" data-fx-atraso="80">O que você pediu para destacar, traduzido em rotina de sessão.</p>
+        </div>
+        <ul class="principles__list">
+          <li data-fx="subir">
+            <span class="principles__tag">Presença</span>
+            <div class="principles__text">
+              <h3>Escuta ativa e empática</h3>
+              <p>Atenção ao ritmo da sua fala e ao que fica entre linhas. Sem protocolo frio.</p>
+            </div>
+          </li>
+          <li data-fx="subir" data-fx-atraso="80">
+            <span class="principles__tag">Estrutura</span>
+            <div class="principles__text">
+              <h3>Espaço seguro</h3>
+              <p>Sigilo e acolhimento para o que dói, cansa ou confunde.</p>
+            </div>
+          </li>
+          <li data-fx="subir" data-fx-atraso="160">
+            <span class="principles__tag">Regulação</span>
+            <div class="principles__text">
+              <h3>Menos ansiedade</h3>
+              <p>Nomear emoções e pensamentos costuma devolver fôlego e foco ao dia a dia.</p>
+            </div>
+          </li>
+          <li data-fx="subir" data-fx-atraso="240">
+            <span class="principles__tag">Vida prática</span>
+            <div class="principles__text">
+              <h3>Mais clareza para agir</h3>
+              <p>Quando o emocional destrava, trabalho e relações ganham espaço de novo.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="pico-wrap" data-fx-fixa data-fx-altura="5" data-fx-fundo="#dbe8d4" data-fx-tinta="#121210" aria-labelledby="pico-titulo">
+      <div class="fx-palco" style="min-height:100vh; min-height:100dvh; padding: clamp(2.5rem, 6vw, 4rem) 0;">
+        <div class="pico-inner">
+          <h2 id="pico-titulo" data-fx="palavras" style="margin-bottom: var(--space-2); max-width: 14ch;">O que buscam</h2>
+          <p class="suave" data-fx="subir" data-fx-atraso="60">Temas que você pediu para comunicar. Não são depoimentos de terceiros.</p>
+          <div data-fx="trilho" style="display: flex; gap: 1rem; margin-top: var(--space-4);">
+            <article class="cartao-depo">
+              <p class="tema-cartao">Sensação</p>
+              <p class="cartao-texto">Mais leveza e calma.</p>
+            </article>
+            <article class="cartao-depo">
+              <p class="tema-cartao">Escuta</p>
+              <p class="cartao-texto">Empatia sem performance.</p>
+            </article>
+            <article class="cartao-depo">
+              <p class="tema-cartao">Foco</p>
+              <p class="cartao-texto">Menos ansiedade, mente mais presente.</p>
+            </article>
+            <article class="cartao-depo">
+              <p class="tema-cartao">Rotina</p>
+              <p class="cartao-texto">Produtividade sem culpa.</p>
+            </article>
+            <article class="cartao-depo">
+              <p class="tema-cartao">Base</p>
+              <p class="cartao-texto">Um espaço seguro para falar do que pesa.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trg" class="sec split-trg" data-fx-fundo="#edf1e8" data-fx-tinta="#121210">
+      <div class="shell">
+        <div class="split-trg__aside" data-fx="crescer" aria-hidden="true">TRG</div>
+        <div class="split-trg__body">
+          <h2 data-fx="subir">Terapia de Reprocessamento Generativo</h2>
+          <div data-fx-paralaxe="0.1">
+            <p class="suave" data-fx="surgir">
+              Integra recursos da terapia cognitivo-comportamental com a forma como emoções e memórias se organizam. O foco é <strong>reprocessar</strong> experiências que ainda doem e abrir caminhos <strong>generativos</strong>: novas formas de viver e se relacionar.
+            </p>
+            <p class="suave" data-fx="surgir" data-fx-atraso="100">
+              Pedir ajuda é decisão, não fraqueza.
+            </p>
+          </div>
+          <a class="btn-wa" data-fx="subir" data-fx-atraso="160" href="https://wa.me/5571992153282?text=Ol%C3%A1%21%20Quero%20entender%20melhor%20a%20TRG.">Dúvidas no WhatsApp · 71 99215-3282</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="sec sec--quiet faq-block" data-fx-fundo="#e4ebe0" data-fx-tinta="#121210" aria-labelledby="faq-titulo">
+      <div class="shell">
+        <h2 id="faq-titulo" data-fx="direita">Perguntas frequentes</h2>
+        <p class="suave" data-fx="surgir" data-fx-atraso="60">Sobre TRG e primeiro contato.</p>
+        <div class="faq-list">
+          <details class="faq-item" data-fx="surgir">
+            <summary>Pra quem é?</summary>
+            <div class="faq-body">
+              <p>Adultos com ansiedade, sobrecarga emocional, transições, autocrítica ou sensação de estar travada. O encaixe é avaliado no diálogo inicial.</p>
+            </div>
+          </details>
+          <details class="faq-item" data-fx="surgir" data-fx-atraso="50">
+            <summary>Qual a abordagem?</summary>
+            <div class="faq-body">
+              <p>Terapia de Reprocessamento Generativo (TRG), com escuta clínica e ferramentas para reorganizar pensamento e emoção.</p>
+            </div>
+          </details>
+          <details class="faq-item" data-fx="surgir" data-fx-atraso="100">
+            <summary>Quanto tempo dura?</summary>
+            <div class="faq-body">
+              <p>Não há prazo fixo. Depende da sua demanda, do ritmo de vida e dos objetivos combinados. Isso é transparente desde o começo.</p>
+            </div>
+          </details>
+          <details class="faq-item" data-fx="surgir" data-fx-atraso="150">
+            <summary>Online ou presencial?</summary>
+            <div class="faq-body">
+              <p>Definido no primeiro contato, conforme disponibilidade e o que fizer sentido para você.</p>
+            </div>
+          </details>
+          <details class="faq-item" data-fx="surgir" data-fx-atraso="200">
+            <summary>Como começar?</summary>
+            <div class="faq-body">
+              <p>Mensagem no <strong>71 99215-3282</strong>. Respondemos com próximos passos e podemos marcar uma conversa inicial sem pressão.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="fim" data-fx-fundo="#121210" data-fx-tinta="#f7f5f0">
+      <div class="shell">
+        <div>
+          <p class="suave" data-fx="surgir">Contato</p>
+          <h2 data-fx="crescer">Jaqueline Secundino</h2>
+          <p data-fx="surgir" data-fx-atraso="80">Terapeuta emocional · TRG</p>
+        </div>
+        <a class="btn-wa" data-fx="subir" data-fx-atraso="180" href="https://wa.me/5571992153282?text=Ol%C3%A1%2C%20Jaqueline%21%20Vim%20pelo%20site%20e%20quero%20conversar.">71 99215-3282</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="motor/sites-incriveis.js" defer></script>
+  <script>
+    (function () {
+      var heroSec = document.getElementById("hero-cena");
+      var palco = document.getElementById("hero-palco");
+      if (!heroSec || !palco) return;
+      var ativo = false;
+      var raf = null;
+      function aplicar() {
+        var raw = getComputedStyle(heroSec).getPropertyValue("--progresso").trim();
+        var p = parseFloat(raw);
+        if (isNaN(p)) p = 0;
+        palco.style.setProperty("--girassol", String(Math.max(0, Math.min(1, p))));
+      }
+      function loop() {
+        raf = null;
+        if (!ativo) return;
+        aplicar();
+        raf = requestAnimationFrame(loop);
+      }
+      function iniciar() {
+        if (ativo) return;
+        ativo = true;
+        if (raf == null) raf = requestAnimationFrame(loop);
+      }
+      function parar() {
+        ativo = false;
+        if (raf != null) cancelAnimationFrame(raf);
+        raf = null;
+      }
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(
+          function (entries) {
+            if (entries[0] && entries[0].isIntersecting) iniciar();
+            else parar();
+          },
+          { root: null, threshold: 0 }
+        );
+        io.observe(heroSec);
+      } else {
+        iniciar();
+      }
+      window.addEventListener("resize", aplicar, { passive: true });
+      aplicar();
+    })();
+  </script>
+</body>
+</html>
